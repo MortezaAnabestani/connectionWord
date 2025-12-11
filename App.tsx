@@ -327,7 +327,7 @@ export const App: React.FC = () => {
     
     let nextFullGrid = [...currentGrid];
     const newSolvedCats = [...currentSolvedCats];
-    const rowSize = 6;
+    const rowSize = 5; // Changed from 6 to 5
     
     for (let i = 0; i < activeWords.length; i += rowSize) {
        const chunk = activeWords.slice(i, i + rowSize);
@@ -593,7 +593,7 @@ export const App: React.FC = () => {
                 />
 
                 <div className="flex justify-between px-2 mb-2 items-center">
-                  <ProgressBar total={8} solvedCount={solvedCategories.length} />
+                  <ProgressBar total={7} solvedCount={solvedCategories.length} /> {/* Changed from 8 to 7 for 5x7 grid */}
                   <span className="bg-black/20 px-3 py-1 rounded-full text-white/90 font-bold text-xs backdrop-blur-sm border border-white/5 shadow-sm">
                     {activeWords.length} آیتم
                   </span>
@@ -607,7 +607,7 @@ export const App: React.FC = () => {
                   ))}
                 </div>
 
-                <div className="grid grid-cols-6 gap-1.5 md:gap-3 p-2 justify-items-center bg-black/10 rounded-3xl inner-shadow min-h-[300px]">
+                <div className="grid grid-cols-5 gap-1.5 md:gap-3 p-2 justify-items-center bg-black/10 rounded-3xl inner-shadow min-h-[300px]"> {/* Changed from grid-cols-6 to grid-cols-5 */}
                    {activeWords.map((word) => (
                       <div 
                         key={word.id} 
